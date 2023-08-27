@@ -8,7 +8,12 @@ import Link from "next/link";
 import { FC } from "react";
 import { IconType } from "react-icons";
 import { AiOutlineGift } from "react-icons/ai";
-import { BsChatLeftText, BsCodeSlash, BsImage } from "react-icons/bs";
+import {
+  BsChatLeftText,
+  BsCodeSlash,
+  BsImage,
+  BsArrowRightShort,
+} from "react-icons/bs";
 import { LuLayoutDashboard } from "react-icons/lu";
 
 interface pageProps {}
@@ -41,7 +46,7 @@ const routes: route[] = [
   {
     label: "Gift Generator",
     icon: AiOutlineGift,
-    href: "/gift",
+    href: "/gift-generator",
     color: "text-rose-500",
     bgColor: "bg-rose-500/10",
   },
@@ -89,32 +94,37 @@ const Page: FC<pageProps> = ({}) => {
           />
         </div>
       </div>
-      <div className="px-6 md:px-20 lg:px-32 space-y-4 py-12 flex justify-center w-full h-auto flex-col items-center ">
+      <div className="px- md:px-20 lg:px-32 space-y-6 md:py-18 py-12 flex justify-center w-full h-auto flex-col items-center overflow-x-hidden">
         {routes.map((route) => (
           <Card
             className={cn(
-              " border-2 border-black/5 hover:bg-black/5 lg:w-[40rem] md:w-[30rem] sm:w-4/5 w-[93%] font-medium"
+              " border border-slate-300 hover:bg-zinc-100 lg:w-[40rem] md:w-[30rem] sm:w-4/5 w-[90%] font-medium transition-all hover:-translate-y-2 duration-150 ease-in delay-100"
             )}
             key={route.href}
           >
             <Link href={route.href}>
-              <div className="flex item-center px-4 py-2 gap-4">
-                <div
-                  className={cn(
-                    "h-10 w-10 rounded-lg text-xl flex justify-center items-center",
-                    route.bgColor,
-                    route.color
-                  )}
-                >
-                  {<route.icon />}
+              <div className="flex item-center justify-between px-4 py-2 ">
+                <div className="flex items-center gap-4">
+                  <div
+                    className={cn(
+                      "h-10 w-10 rounded-lg text-xl flex justify-center items-center",
+                      route.bgColor,
+                      route.color
+                    )}
+                  >
+                    {<route.icon />}
+                  </div>
+                  <div
+                    className={cn(
+                      "text-md  flex items-center ",
+                      montserrat.className
+                    )}
+                  >
+                    <h3>{route.label}</h3>
+                  </div>
                 </div>
-                <div
-                  className={cn(
-                    "text-md  flex items-center ",
-                    montserrat.className
-                  )}
-                >
-                  <h3>{route.label}</h3>
+                <div className="text-2xl flex items-center">
+                  <BsArrowRightShort />
                 </div>
               </div>
             </Link>

@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { Montserrat } from "next/font/google";
+import { Josefin_Sans, Montserrat } from "next/font/google";
 import Link from "next/link";
 import { FC } from "react";
 
@@ -26,6 +26,11 @@ const monsterat = Montserrat({
   subsets: ["latin"],
 });
 
+const jose = Josefin_Sans({
+  weight: ["200", "500", "400", "600", "700"],
+  subsets: ["latin"],
+});
+
 const routes: route[] = [
   {
     label: "Dashboard",
@@ -42,7 +47,7 @@ const routes: route[] = [
   {
     label: "Gift Generator",
     icon: AiOutlineGift,
-    href: "/gift",
+    href: "/gift-generator",
     color: "text-rose-500",
   },
   {
@@ -64,14 +69,9 @@ const Sidebar: FC<sidebarProps> = ({}) => {
   return (
     <div className="flex flex-col py-4 h-full w-full text-white space-y-4">
       <div className="py-2 px-2">
-        <Link href="/" className="flex items-center pl-5 mb-12 ">
-          <h1
-            className={cn(
-              "text-2xl font-bold text-center",
-              monsterat.className
-            )}
-          >
-            AiWizard
+        <Link href="/" className="flex items-center pl-7  mb-12 ">
+          <h1 className={cn("text-2xl font-bold ", monsterat.className)}>
+            <span className={cn("", jose.className)}>AW</span> AiWizard
           </h1>
         </Link>
         <div className="space-y-2">
@@ -92,14 +92,6 @@ const Sidebar: FC<sidebarProps> = ({}) => {
               </div>
             </Link>
           ))}
-        </div>
-      </div>
-      <div className="flex items-center ">
-        <div className="pl-5">
-          <UserButton afterSignOutUrl="/" />
-        </div>
-        <div className="flex flex-col">
-          <h1 className={cn("tex-xl ml-4", monsterat.className)}>hi</h1>
         </div>
       </div>
     </div>
