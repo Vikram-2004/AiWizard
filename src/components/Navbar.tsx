@@ -1,25 +1,18 @@
-import Link from "next/link";
 import { FC } from "react";
-import { Button } from "./ui/button";
+
+import { UserButton } from "@clerk/nextjs";
+import MobileSidebar from "./MobileSidebar";
 
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
   return (
-    <nav className="flex justify-between items-center bg-[#F4EEFF] h-14 px-40">
-      <div className="text-[#424874] font-medium">
-        <h1 className="text-3xl">AiWizard</h1>
+    <div className="flex items-center p-4">
+      <MobileSidebar />
+      <div className="flex justify-end w-full">
+        <UserButton afterSignOutUrl="/" />
       </div>
-      <div className="flex gap-8 text-2xl text-[#424874] font-medium ">
-        <Link href="">
-          <Button size="lg" variant="outline">
-            hello
-          </Button>
-        </Link>
-        <Link href="">About us</Link>
-        <Link href="">About us</Link>
-      </div>
-    </nav>
+    </div>
   );
 };
 
