@@ -9,7 +9,6 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { AiOutlineGift } from "react-icons/ai";
 import { BsChatLeftText, BsCodeSlash, BsImage } from "react-icons/bs";
 
-import { UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 
 interface sidebarProps {}

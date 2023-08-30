@@ -4,7 +4,6 @@ import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Montserrat } from "next/font/google";
 import TypewriterComponent from "typewriter-effect";
-import Link from "next/link";
 import { FC } from "react";
 import { IconType } from "react-icons";
 import { AiOutlineGift } from "react-icons/ai";
@@ -17,6 +16,7 @@ import {
 import { LuLayoutDashboard } from "react-icons/lu";
 
 interface pageProps {}
+
 const montserrat = Montserrat({
   weight: ["500", "400", "700"],
   subsets: ["latin"],
@@ -29,13 +29,6 @@ interface route {
   bgColor: string;
 }
 const routes: route[] = [
-  {
-    label: "Dashboard",
-    icon: LuLayoutDashboard,
-    href: "/dashboard",
-    color: "text-sky-500",
-    bgColor: "bg-sky-500/10",
-  },
   {
     label: "Chat Completion",
     icon: BsChatLeftText,
@@ -68,10 +61,10 @@ const routes: route[] = [
 
 const Page: FC<pageProps> = ({}) => {
   return (
-    <div className="w-full space-y-4 bg-white">
+    <div className="w-full space-y-4 bg-white pt-20">
       <h1
         className={cn(
-          "text-2xl font-bold md:text-4xl text-center",
+          "text-2xl font-bold md:text-5xl text-center",
           montserrat.className
         )}
       >
@@ -98,11 +91,11 @@ const Page: FC<pageProps> = ({}) => {
         {routes.map((route) => (
           <Card
             className={cn(
-              " border border-slate-300 hover:bg-zinc-100 lg:w-[40rem] md:w-[30rem] sm:w-4/5 w-[90%] font-medium transition-all hover:-translate-y-2 duration-150 ease-in delay-100"
+              " border border-slate-400 hover:bg-zinc-100 lg:w-[40rem] md:w-[30rem] sm:w-4/5 w-[90%] font-medium transition-all hover:-translate-y-2 duration-150 ease-in delay-100"
             )}
             key={route.href}
           >
-            <Link href={route.href}>
+            <a href={route.href}>
               <div className="flex item-center justify-between px-4 py-2 ">
                 <div className="flex items-center gap-4">
                   <div
@@ -127,7 +120,7 @@ const Page: FC<pageProps> = ({}) => {
                   <BsArrowRightShort />
                 </div>
               </div>
-            </Link>
+            </a>
           </Card>
         ))}
       </div>

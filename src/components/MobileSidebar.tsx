@@ -1,7 +1,6 @@
 "use client";
 import { FC, useEffect, useState } from "react";
 import { BiMenuAltLeft } from "react-icons/bi";
-import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import Sidebar from "./sidebar";
 
@@ -20,9 +19,9 @@ const MobileSidebar: FC<MobileSidebarProps> = ({}) => {
     <div className="md:hidden transition">
       <Sheet>
         <SheetTrigger>
-          <Button size="icon" variant="ghost" className="md:hidden">
+          <div className="rounded-lg hover:bg-gray-300">
             <BiMenuAltLeft size="30" />
-          </Button>
+          </div>
         </SheetTrigger>
         <SheetContent side="left" className="p-0 bg-gray-900">
           <Sidebar />
