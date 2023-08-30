@@ -19,7 +19,7 @@ const Input: FC<InputProps> = ({
     <div>
       <label
         htmlFor={label}
-        className="block text-md font-medium pb-1 text-black pl-1"
+        className="block text-md font-medium pb-1 text-gray-600 pl-1"
       >
         {label}
       </label>
@@ -34,10 +34,10 @@ const Input: FC<InputProps> = ({
         pb-2
         w-full
         border
-        border-gray-400
+        border-gray-500
         text-gray-900
         bg-neutral-50
-        focus:border-b-4
+        focus:border-b-2
         focus:outline-0
         focus:ring-0
         appearance-none

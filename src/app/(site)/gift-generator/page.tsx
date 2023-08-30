@@ -22,6 +22,7 @@ interface input {
   budget: string;
   hobbies: string;
   occation: string;
+  initial: boolean;
 }
 
 const Page: FC<pageProps> = ({}) => {
@@ -30,6 +31,7 @@ const Page: FC<pageProps> = ({}) => {
     budget: "",
     hobbies: "",
     occation: "",
+    initial: true,
   });
   const [gifts, setGifts] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -57,7 +59,13 @@ const Page: FC<pageProps> = ({}) => {
         ) as string[];
 
       setGifts(data);
-      setInput({ relation: "", budget: "", hobbies: "", occation: "" });
+      setInput({
+        relation: "",
+        budget: "",
+        hobbies: "",
+        occation: "",
+        initial: false,
+      });
     } catch (error) {
       if (error instanceof OpenAI.APIError) {
         console.error(error.status);
@@ -74,11 +82,11 @@ const Page: FC<pageProps> = ({}) => {
     <main className="w-full  ">
       <h1
         className={cn(
-          "sm:text-6xl text-4xl font-bold text-center pt-12 text-transparent  bg-clip-text bg-gradient-to-tr from-[#FF512F] to-[#DD2476]",
+          "sm:text-6xl text-4xl font-bold text-center pt-12  text-[#E90064]",
           monts.className
         )}
       >
-        GIFT GENERATOR
+        Générateur de cadeaux
       </h1>
       <form onSubmit={handleSubmit}>
         <div className={cn("pt-12 px-4 ", monts.className)}>
@@ -97,7 +105,7 @@ const Page: FC<pageProps> = ({}) => {
             <div className="sm:w-[30rem] w-[95%]">
               <Input
                 label="What is your Budget?"
-                placeholder="₹40, ₹100, ..."
+                placeholder="₹400, ₹1000, ..."
                 value={input.budget} // gali
                 onChange={(e) => {
                   setInput({ ...input, budget: e.target.value });
@@ -132,7 +140,7 @@ const Page: FC<pageProps> = ({}) => {
             <div className="sm:w-[30rem] w-[95%] pt-4">
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-tr text-white from-[#FF512F] to-[#DD2476] text-lg  transition duration-100 delay-100 py-4"
+                className="w-full text-white text-lg py-5 bg-gradient-to-r from-[#C373F2] to-[#F977CE] "
               >
                 Generate Gifts
               </Button>
@@ -141,11 +149,11 @@ const Page: FC<pageProps> = ({}) => {
         </div>
       </form>
       {!loading ? (
-        <Gift gifts={gifts} loading={loading} />
+        <Gift gifts={gifts} initial={input.initial} />
       ) : (
         <div
           role="status"
-          className="flex flex-col gap-2 w-full items-center justify-center mt-12"
+          className="flex flex-col gap-2 w-full items-center justify-center py-12"
         >
           <svg
             aria-hidden="true"
