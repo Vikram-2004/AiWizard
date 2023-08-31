@@ -2,21 +2,13 @@
 import Input from "@/components/Input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Montserrat, Open_Sans, Outfit } from "next/font/google";
+
 import { FC, useState } from "react";
 import { OpenAI } from "openai";
 import Gift from "@/components/Gift";
 
 interface pageProps {}
 
-const monts = Montserrat({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-});
-const outfit = Outfit({
-  weight: ["500", "600", "400", "800"],
-  subsets: ["latin"],
-});
 interface input {
   relation: string;
   budget: string;
@@ -33,7 +25,7 @@ const Page: FC<pageProps> = ({}) => {
     occation: "",
     initial: true,
   });
-  const [gifts, setGifts] = useState<string[]>([]);
+  const [gifts, setGifts] = useState<string[][]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: any) => {
@@ -52,11 +44,11 @@ const Page: FC<pageProps> = ({}) => {
       });
 
       setLoading(false);
-      const data: string[] = chatCompletion.choices[0].message.content
+      const data: string[][] = chatCompletion.choices[0].message.content
         ?.split("\n")
-        .filter(
-          (data) => data != "" && data[0] >= "0" && data[0] <= "7"
-        ) as string[];
+        .filter((data) => data != "" && data[0] >= "0" && data[0] <= "7")
+        .map((data) => data.split(":")) as string[][];
+      console.log("data", data);
 
       setGifts(data);
       setInput({
@@ -80,25 +72,20 @@ const Page: FC<pageProps> = ({}) => {
 
   return (
     <main className="w-full  ">
-      <h1
-        className={cn(
-          "sm:text-6xl text-4xl font-bold text-center pt-12  text-[#E90064]",
-          monts.className
-        )}
-      >
+      <h1 className="sm:text-6xl text-4xl font-bold text-center pt-12  text-[#E90064]">
         Générateur de cadeaux
       </h1>
       <form onSubmit={handleSubmit}>
-        <div className={cn("pt-12 px-4 ", monts.className)}>
+        <div className="pt-12 px-4 ">
           <div className="w-full flex flex-col items-center gap-4">
             <div className="sm:w-[30rem] w-[95%]">
               <Input
                 label="Who it's for?"
                 placeholder="Wife, Friend, ..."
-                value={input.relation} // string gali
+                value={input.relation}
                 onChange={(e) => {
                   setInput({ ...input, relation: e.target.value });
-                }} //func gali
+                }}
                 type="text"
               />
             </div>
@@ -106,10 +93,10 @@ const Page: FC<pageProps> = ({}) => {
               <Input
                 label="What is your Budget?"
                 placeholder="₹400, ₹1000, ..."
-                value={input.budget} // gali
+                value={input.budget}
                 onChange={(e) => {
                   setInput({ ...input, budget: e.target.value });
-                }} //gali
+                }}
                 type="text"
               />
             </div>
@@ -117,10 +104,10 @@ const Page: FC<pageProps> = ({}) => {
               <Input
                 label="What do they like?"
                 placeholder="Music, sports, ..."
-                value={input.hobbies} //galie
+                value={input.hobbies}
                 onChange={(e) => {
                   setInput({ ...input, hobbies: e.target.value });
-                }} // galie
+                }}
                 type="text"
               />
             </div>
@@ -128,10 +115,10 @@ const Page: FC<pageProps> = ({}) => {
               <Input
                 label="What is the occation?"
                 placeholder="Birthday, Aniversary, ..."
-                value={input.occation} //gali
+                value={input.occation}
                 onChange={(e) => {
                   setInput({ ...input, occation: e.target.value });
-                }} // gali
+                }}
                 type="text"
               />
             </div>

@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import NavbarDasboard from "@/components/NavbarDashboard";
 import Sidebar from "@/components/Sidebar";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -10,7 +10,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </div>
       <div className="md:pl-72 h-screen w-full ">
-        <Navbar />
+        <NavbarDasboard />
         {children}
       </div>
     </div>

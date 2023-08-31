@@ -1,16 +1,10 @@
 import { cn } from "@/lib/utils";
-import { Montserrat } from "next/font/google";
 import { FC } from "react";
 
 interface GiftProps {
-  gifts: string[];
+  gifts: string[][];
   initial: boolean;
 }
-
-const monts = Montserrat({
-  weight: ["500", "400", "600", "700"],
-  subsets: ["latin"],
-});
 
 const Gift: FC<GiftProps> = ({ gifts, initial }) => {
   return (
@@ -20,23 +14,22 @@ const Gift: FC<GiftProps> = ({ gifts, initial }) => {
         initial ? "hidden" : "flex"
       )}
     >
-      <div
-        className={cn(
-          "xl:w-[60rem] border-2 border-[#DD2476] py-8 lg:w-[30rem] w-[95%] mb-8 bg-zinc-50 rounded-lg",
-          monts.className
-        )}
-      >
-        <h1 className="text-lg text-gray-700 uppercase pl-8 font-medium">
+      <div className="xl:w-[50rem] py-8 lg:w-[30rem] w-[95%] mb-8 mx-2">
+        <h1 className="text-xl  uppercase sm:px-8 px-4 font-bold text-[#ff59a4]">
           the generated gifts are :
         </h1>
-        <div className="pl-8 ">
-          <ul className="list-outside text-md py-4 text-gray-500">
-            {gifts.map((gift) => (
-              <li key={gift[0]} className="py-2">
-                {gift}
-              </li>
-            ))}
-          </ul>
+        <div className="flex w-full  flex-col gap-4 py-4 ">
+          {gifts.map((gift) => {
+            return (
+              <div
+                className="w-full border-2 rounded-lg sm:px-8 px-4 py-4 bg-zinc-50"
+                key={gift[0]}
+              >
+                <p className=" font-bold text-gray-700">{gift[0]}</p>
+                <p className="py-3 text-gray-500">{gift[1]}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

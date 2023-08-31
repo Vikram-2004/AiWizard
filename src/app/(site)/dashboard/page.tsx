@@ -2,7 +2,6 @@
 
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Montserrat } from "next/font/google";
 import TypewriterComponent from "typewriter-effect";
 import { FC } from "react";
 import { IconType } from "react-icons";
@@ -13,14 +12,9 @@ import {
   BsImage,
   BsArrowRightShort,
 } from "react-icons/bs";
-import { LuLayoutDashboard } from "react-icons/lu";
 
 interface pageProps {}
 
-const montserrat = Montserrat({
-  weight: ["500", "400", "700"],
-  subsets: ["latin"],
-});
 interface route {
   label: string;
   icon: IconType;
@@ -62,12 +56,7 @@ const routes: route[] = [
 const Page: FC<pageProps> = ({}) => {
   return (
     <div className="w-full space-y-4 bg-white pt-20">
-      <h1
-        className={cn(
-          "text-2xl font-bold md:text-5xl text-center",
-          montserrat.className
-        )}
-      >
+      <h1 className="text-2xl font-bold md:text-5xl text-center">
         Innovate with Artificial Intelligence.
       </h1>
       <div className="md:text-lg text-center text-muted-foreground font-light text-sm flex justify-center w-full gap-1">
@@ -90,9 +79,7 @@ const Page: FC<pageProps> = ({}) => {
       <div className="px-4 md:px-20 lg:px-32 space-y-6 md:py-18 py-12 flex justify-center w-full h-auto flex-col items-center overflow-x-hidden">
         {routes.map((route) => (
           <Card
-            className={cn(
-              " border border-slate-400 hover:bg-zinc-100 lg:w-[40rem] md:w-[30rem] sm:w-4/5 w-[90%] font-medium transition-all hover:-translate-y-2 duration-150 ease-in delay-100"
-            )}
+            className=" border border-slate-400 hover:bg-zinc-100 lg:w-[40rem] md:w-[30rem] sm:w-4/5 w-[90%] font-medium transition-all hover:-translate-y-2 duration-150 ease-in delay-100"
             key={route.href}
           >
             <a href={route.href}>
@@ -107,12 +94,7 @@ const Page: FC<pageProps> = ({}) => {
                   >
                     {<route.icon />}
                   </div>
-                  <div
-                    className={cn(
-                      "text-md  flex items-center ",
-                      montserrat.className
-                    )}
-                  >
+                  <div className="text-md  flex items-center ">
                     <h3>{route.label}</h3>
                   </div>
                 </div>

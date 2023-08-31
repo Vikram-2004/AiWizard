@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -95,4 +97,87 @@
 
 .custom-shape-divider-bottom-1692032217 .shape-fill {
   fill: #f3f4f6;
+}
+
+.monts {
+  font-family: "Montserrat", sans-serif;
+}
+
+.jose {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* curves for our website */
+.custom-shape-divider-bottom-1693489127 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1693489127 svg {
+  position: relative;
+  display: block;
+  width: calc(111% + 1.3px);
+  height: 152px;
+}
+
+.custom-shape-divider-bottom-1693489127 .shape-fill {
+  fill: #f3f4f6;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-bottom-1693489127 svg {
+    width: calc(111% + 1.3px);
+    height: 123px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1693489127 svg {
+    width: calc(139% + 1.3px);
+    height: 95px;
+  }
+}
+
+.custom-shape-divider-bottom-1693489400 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1693489400 svg {
+  position: relative;
+  display: block;
+  width: calc(111% + 1.3px);
+  height: 152px;
+}
+
+.custom-shape-divider-bottom-1693489400 .shape-fill {
+  fill: #1f2937;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-bottom-1693489400 svg {
+    width: calc(111% + 1.3px);
+    height: 123px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1693489400 svg {
+    width: calc(139% + 1.3px);
+    height: 95px;
+  }
 }

@@ -4,7 +4,7 @@ import MobileSidebar from "./MobileSidebar";
 
 interface NavbarProps {}
 
-const Navbar: FC<NavbarProps> = ({}) => {
+const NavbarDasboard: FC<NavbarProps> = ({}) => {
   return (
     <div className="flex items-center p-4">
       <MobileSidebar />
@@ -12,4 +12,4 @@ const Navbar: FC<NavbarProps> = ({}) => {
   );
 };
 
-export default Navbar;
+export default NavbarDasboard;
