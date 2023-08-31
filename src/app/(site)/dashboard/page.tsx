@@ -87,7 +87,7 @@ const Page: FC<pageProps> = ({}) => {
           />
         </div>
       </div>
-      <div className="px- md:px-20 lg:px-32 space-y-6 md:py-18 py-12 flex justify-center w-full h-auto flex-col items-center overflow-x-hidden">
+      <div className="px-4 md:px-20 lg:px-32 space-y-6 md:py-18 py-12 flex justify-center w-full h-auto flex-col items-center overflow-x-hidden">
         {routes.map((route) => (
           <Card
             className={cn(

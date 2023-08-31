@@ -140,7 +140,7 @@ const Page: FC<pageProps> = ({}) => {
             <div className="sm:w-[30rem] w-[95%] pt-4">
               <Button
                 type="submit"
-                className="w-full text-white text-lg py-5 bg-gradient-to-r from-[#C373F2] to-[#F977CE] "
+                className="w-full transition duration-150 ease-in-out text-white text-lg py-5 bg-gradient-to-r from-[#C373F2] hover:from-[#c059fc] hover:to-[#fd3dbd] to-[#F977CE] "
               >
                 Generate Gifts
               </Button>

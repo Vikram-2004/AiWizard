@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/Sidebar";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="h-full relative">
       <div className="hidden md:flex md:fixed md:flex-col h-full md:w-72 md:inset-y-0 bg-gray-900 z-[80]">
@@ -17,4 +17,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default layout;
+export default RootLayout;

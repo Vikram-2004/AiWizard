@@ -2,7 +2,7 @@
 import { FC, useEffect, useState } from "react";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import Sidebar from "./sidebar";
+import Sidebar from "./Sidebar";
 
 interface MobileSidebarProps {}
 
