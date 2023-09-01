@@ -48,7 +48,6 @@ const Page: FC<pageProps> = ({}) => {
         ?.split("\n")
         .filter((data) => data != "" && data[0] >= "0" && data[0] <= "7")
         .map((data) => data.split(":")) as string[][];
-      console.log("data", data);
 
       setGifts(data);
       setInput({
@@ -73,7 +72,7 @@ const Page: FC<pageProps> = ({}) => {
   return (
     <main className="w-full  ">
       <h1 className="sm:text-6xl text-4xl font-bold text-center pt-12  text-[#E90064]">
-        Générateur de cadeaux
+        GIFT GENERATOR
       </h1>
       <form onSubmit={handleSubmit}>
         <div className="pt-12 px-4 ">

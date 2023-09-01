@@ -66,7 +66,8 @@ const Footer: FC<FooterProps> = ({}) => {
         </div>
       </div>
       <div className="px-4 pb-4 text-center">
-        &copy; 2023 Copyright: <span className="text-white"> Vikram</span>
+        Copyright &copy; 2023 <span className="text-white"> Vikram </span>
+        All rights reserved.
       </div>
     </footer>
   );

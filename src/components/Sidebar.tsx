@@ -67,7 +67,10 @@ const Sidebar: FC<sidebarProps> = ({}) => {
             <Link
               href={route.href}
               key={route.href}
-              className="flex text-sm group py-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg pl-7 transition"
+              className={cn(
+                "flex text-sm group py-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg pl-7 transition",
+                pathname == route.href ? "bg-white/10" : ""
+              )}
             >
               <div className="flex items-center">
                 {<route.icon className={cn("h-5 w-5 mr-3", route.color)} />}

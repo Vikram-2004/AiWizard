@@ -10,7 +10,7 @@ const NavbarHero: FC<NavbarHeroProps> = ({}) => {
     <nav className="flex justify-center  h-16  fixed z-10 w-full bg-[#f3f4f6]">
       <div className="flex justify-between items-center sm:w-[70%] h-full w-full max-sm:mx-4 ">
         <div>
-          <h1 className="text-gray-500 sm:text-2xl text-xl  font-semibold transition  hover:border-b-2  hover:border-gray-300">
+          <h1 className="text-gray-500 cursor-pointer	 sm:text-2xl text-xl  font-semibold transition  hover:border-b-2  hover:border-gray-300">
             <span className=" mr-2">AW</span>AiWizard
           </h1>
         </div>
