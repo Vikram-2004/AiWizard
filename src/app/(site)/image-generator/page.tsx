@@ -4,7 +4,7 @@ interface pageProps {}
 
 const page: FC<pageProps> = ({}) => {
   return (
-    <div className="flex items-center justify-center ">
+    <div className="flex  items-center justify-center ">
       This page will be constructed soon..
     </div>
   );
