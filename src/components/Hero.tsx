@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import BottomwaveWhite from "./BottomwaveWhite";
+
 import NavbarHero from "./NavbarHero";
 
 interface HeroProps {}
@@ -9,23 +9,22 @@ const Hero: FC<HeroProps> = ({}) => {
   return (
     <>
       <NavbarHero />
-      <section className=" relative pb-20 sm:h-[900px] h-[800px]  bg-cover bg-center  flex flex-col justify-center items-center text-center gap-3 bg-gradient-to-tr from-teal-400 to-cyan-500 bg-no-repeat ">
-        <h1 className="sm:w-[70%] text-4xl sm:text-5xl md:text-6xl font-bold mb-4 max-sm:mx-4 text-white">
-          Welcome to AiWizard
+      <section className=" relative pb-20 sm:h-[800px] h-[800px]  bg-cover bg-center  flex flex-col justify-center items-center text-center bg-gradient-to-tr bg-[#ffffff] bg-no-repeat ">
+        <h1 className="sm:w-[70%] text-6xl sm:text-7xl md:text-9xl font-bold  max-sm:mx-4  mb-4 md:text-black pt-20">
+          AiWizard
         </h1>
-        <h2 className="sm:w-[70%] text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 max-sm:mx-4 text-white">
-          Your Magical Gift and Conversation Creator!
+        <h2 className="sm:w-[70%] text-3xl sm:text-4xl md:text-5xl font-semibold max-sm:mx-4 text-black flex items-center justify-center mb-8">
+          Digital AI assistant
         </h2>
-        <p className="sm:w-[70%] text-lg sm:text-xl mb-12  max-sm:mx-4 text-gray-100">
+        <p className="sm:w-[70%] text-lg sm:text-xl  max-sm:mx-4 text-black mb-12">
           Unlock the Power of AI for Thoughtful Gifts and Engaging Conversations
         </p>
         <Link
           href="/dashboard"
-          className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white text-md sm:text-xl font-medium py-3 px-8 rounded-full transition duration-300 ease-in-out hover:shadow-lg hover:-translate-y-2"
+          className="bg-gradient-to-r bg-black  text-white text-md sm:text-xl font-medium py-3 px-8 rounded-xl transition duration-300 ease-in-out hover:shadow-lg hover:-translate-y-2"
         >
           Start Your Magical Journey
         </Link>
-        <BottomwaveWhite />
       </section>
     </>
   );
